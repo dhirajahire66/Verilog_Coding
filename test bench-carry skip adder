@@ -1,0 +1,18 @@
+module Tb(
+
+    );
+    reg [15:0] a, b; 
+    reg cin;
+    wire [15:0] sum;
+    wire cout;
+    
+    top_module_16bit DUT(a,b,cin,sum,cout);
+    
+    initial
+    begin 
+    cin=0;
+     a=15'b1111101010101111;    b=15'b1111010101011111;
+    #15 a=15'b1100110011001100;  b=15'b0110011101100101; 
+    #20 $finish;
+    end
+endmodule
